@@ -18,7 +18,7 @@ namespace WebApplication1.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Page()
         {
             return View();
         }

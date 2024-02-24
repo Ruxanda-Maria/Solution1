@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
+using WebApplication1.App_Start;
+using System.Web.Optimization;
 
 namespace WebApplication1
 {
@@ -16,6 +18,7 @@ namespace WebApplication1
             // Code that runs on application startup
            AreaRegistration.RegisterAllAreas();
            RouteConfig.RegisterRoutes(RouteTable.Routes);
+           BundelConfig.RegisterBundles(BundleTable.Bundles);
         }
     }
 }
