@@ -18,7 +18,7 @@ namespace WebApplication1.Controllers
             return View();
         }
 
-        public ActionResult Page()
+        public ActionResult Carousel()
         {
             return View();
         }
@@ -44,6 +44,21 @@ namespace WebApplication1.Controllers
         }
 
         public ActionResult FAQ()
+        {
+            return View();
+        }
+
+        public ActionResult Email_Compose()
+        {
+            return View();
+        }
+
+        public ActionResult Email_Billing()
+        {
+            return View();
+        }
+
+        public ActionResult Email_Action()
         {
             return View();
         }
