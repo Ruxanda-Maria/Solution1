@@ -22,5 +22,30 @@ namespace WebApplication1.Controllers
         {
             return View();
         }
+
+        public ActionResult Companies()
+        {
+            return View();
+        }
+
+        public ActionResult Gallery()
+        {
+            return View();
+        }
+
+        public ActionResult Invoice()
+        {
+            return View();
+        }
+
+        public ActionResult Portles()
+        {
+            return View();
+        }
+
+        public ActionResult FAQ()
+        {
+            return View();
+        }
     }
 }

@@ -576,6 +576,11 @@
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Page.cshtml" />
+    <Content Include="Views\Home\Companies.cshtml" />
+    <Content Include="Views\Home\Gallery.cshtml" />
+    <Content Include="Views\Home\Invoice.cshtml" />
+    <Content Include="Views\Home\Portles.cshtml" />
+    <Content Include="Views\Home\FAQ.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
