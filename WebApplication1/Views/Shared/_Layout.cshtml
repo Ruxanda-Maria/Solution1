@@ -38,11 +38,19 @@
         @RenderBody()
     </div>
 
-    
 
-        <footer class="footer">
-            @Html.Partial("_Footer")
-        </footer>
+
+    <footer class="footer">
+        @Html.Partial("_Footer")
+    </footer>
+
+    @Scripts.Render("~/vendor/js")
+
+    @Scripts.Render("~/app/js")
+
+    @Scripts.Render("~/index/js")
+
+    @RenderSection("Scripts", required: false)
 
 
 </body>
