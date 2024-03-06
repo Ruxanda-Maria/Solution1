@@ -574,7 +574,6 @@
     <Content Include="Templaid\js\vendor.min.js.map" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Shared\_Header.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Carousel.cshtml" />
     <Content Include="Views\Home\Companies.cshtml" />
     <Content Include="Views\Home\Gallery.cshtml" />
@@ -584,6 +583,10 @@
     <Content Include="Views\Home\Email_Compose.cshtml" />
     <Content Include="Views\Home\Email_Billing.cshtml" />
     <Content Include="Views\Home\Email_Action.cshtml" />
+    <Content Include="Views\Home\Pages_login.cshtml" />
+    <Content Include="Views\Home\Pages_lock_screen.cshtml" />
+    <Content Include="Views\Home\Pages_recoverpw.cshtml" />
+    <Content Include="Views\Home\Pages_register.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

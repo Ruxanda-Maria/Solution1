@@ -38,6 +38,13 @@ namespace WebApplication1.App_Start
                  "~/ Templaid/libs/jquery-sparkline/jquery.sparkline.min.js",
                  "~/Templaid/js/pages/dashboard-1.init.js"
                  ));
+
+            //Companies js
+            bundles.Add(new ScriptBundle("~/companies/js").Include(
+                 "~/Templaid/libs/jquery-sparkline/jquery.sparkline.min.js",
+                 "~/Templaid/libs/custombox/custombox.min.js",
+                 "~/ Templaid/js/pages/companies.js"
+                 ));
         }
     }
 }
