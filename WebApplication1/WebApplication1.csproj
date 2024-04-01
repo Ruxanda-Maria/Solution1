@@ -511,10 +511,12 @@
   <ItemGroup>
     <Compile Include="App_Start\BundelConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\User\UserData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -596,7 +598,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebAplication.BusinessLogic\WebAplication.BusinessLogic.csproj">
+      <Project>{f4d87be0-27fd-44ed-be47-ac06bd2a9ab7}</Project>
+      <Name>WebAplication.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebAplication.Domain\WebAplication.Domains.csproj">
+      <Project>{94ff6993-19fa-46ee-977a-ca5d12beff28}</Project>
+      <Name>WebAplication.Domains</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
