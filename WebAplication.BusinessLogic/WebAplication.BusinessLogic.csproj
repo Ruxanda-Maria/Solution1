@@ -47,6 +47,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,8 +57,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppBL\AuthenticatorBL.cs" />
+    <Compile Include="AppBL\SessionContext.cs" />
     <Compile Include="AppBL\UserContext.cs" />
     <Compile Include="BusinessLogic.cs" />
+    <Compile Include="Core\AdminApi.cs" />
     <Compile Include="Core\UserApi.cs" />
     <Compile Include="Interface\ILogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

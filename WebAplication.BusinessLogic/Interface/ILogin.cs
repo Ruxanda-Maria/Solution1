@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using WebAplication.Domain.Entities.Response;
 using WebAplication.Domain.Entities.User;
 using WebAplication.Domains.Entities.Response;
@@ -14,5 +15,7 @@ namespace WebAplication.BusinessLogics.Interface
     {
         ULoginResp UserLoginAction(ULoginData data);
         URegisterResp UserRegisterAction(URegisterData data);
+        HttpCookie GenCookie(string loginCredential);
+        UserMinimal GetUserByCookie(string apiCookieValue);
     }
 }
