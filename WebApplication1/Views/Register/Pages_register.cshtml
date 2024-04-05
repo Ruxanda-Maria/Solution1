@@ -33,6 +33,7 @@
                                     value = "",
                                     name = "username",
                                     id = "fullname",
+                                    required = true,
                                     @class = "form-control"
                                })
                                 </div>
@@ -44,6 +45,8 @@
                                     placeholder = "example@gmail.com",
                                     title = "Enter your email",
                                     value = "",
+                                    type = "email",
+                                    required = true,
                                     name = "email",
                                     id = "emailaddress",
                                     @class = "form-control"
@@ -56,11 +59,22 @@
                                     placeholder = "password",
                                     title = "Enter your password",
                                     value = "",
+                                    type = "password",
+                                    required = true,
+                                    onblur = "verificaParole()",
                                     name = "password",
                                     id = "password",
                                     @class = "form-control"
                                })
                                 </div>
+                                <div class="form-group">
+                                    <label for="password">Repeat Password</label>
+                                    <input class="form-control" type="password" required id="repeat-password" placeholder="Repeat your Password" onblur="verificaParole()">
+                                    <div id="error-message-match" class="error-message" style="display:none; color: red;">The passwords do not match!</div>
+                                    <div id="error-message-length" class="error-message" style="display:none; color: red;">The password must be at least 8 characters long!</div>
+                                    <div id="error-message-policy" class="error-message" style="display:none; color: red;">The password must contain at least one uppercase letter, one lowercase letter, one number, and one special character!</div>
+                                </div>
+
                                 <div class="form-group">
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="checkbox-signup">
@@ -68,7 +82,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group mb-0 text-center">
-                                    <button class="btn btn-primary btn-block" href="/Home/Index" type="submit"> Sign Up </button>
+                                    <button class="btn btn-primary btn-block" href="/Home/Index" id="submit-button" type="submit"> Sign Up </button>
                                 </div>
 
                             </form>

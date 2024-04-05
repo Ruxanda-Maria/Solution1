@@ -246,6 +246,7 @@
     <Content Include="Scripts\jquery-ui-1.13.2.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\main.js" />
     <Content Include="Templaid\css\app-rtl.css" />
     <Content Include="Templaid\css\app-rtl.min.css" />
     <Content Include="Templaid\css\app.css" />
@@ -254,6 +255,7 @@
     <Content Include="Templaid\css\bootstrap.min.css" />
     <Content Include="Templaid\css\icons.css" />
     <Content Include="Templaid\css\icons.min.css" />
+    <Content Include="Templaid\css\main.css" />
     <Content Include="Templaid\fonts\dropify.svg" />
     <Content Include="Templaid\fonts\fa-brands-400.svg" />
     <Content Include="Templaid\fonts\fa-regular-400.svg" />

@@ -20,6 +20,7 @@
 
     @Styles.Render("~/bundles/css")
     @Styles.Render("~/bundles/app/css")
+    <link href="~/Templaid/css/main.css" rel="stylesheet" type="text/css"/>
 
     @if (IsSectionDefined("Styles"))
     {
@@ -43,6 +44,8 @@
     @Scripts.Render("~/index/js")
 
     @Scripts.Render("~/companies/js")
+
+    <script src="~/Scripts/main.js"></script>
 
     @RenderSection("Scripts", required: false)
 
