@@ -63,11 +63,6 @@ namespace WebApplication1.Controllers
             return View();
         }
 
-        public ActionResult Pages_login()
-        {
-            return View();
-        }
-
         public ActionResult Pages_lock_screen()
         {
             return View();

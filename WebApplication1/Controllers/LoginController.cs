@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
+using AutoMapper;
 using WebAplication.BusinessLogics;
 using WebAplication.BusinessLogics.Interface;
 using WebAplication.Domains.Entities.Response;
@@ -22,36 +24,36 @@ namespace WebApplication1.Controllers
 
         }
 
-
-
-        public ActionResult Pages_Login()
+        public ActionResult Pages_login()
         {
             return View();
         }
-
-        public ActionResult Pages_Logins(UserData data)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Pages_login(UserLogin login)
         {
-            var UData = new ULoginData
+            if (ModelState.IsValid)
             {
-                UserName = data.UserName,
-                Password = data.Password,
-                LoginDataTime = DateTime.Now,
-            };
+                var data = Mapper.Map<ULoginData>(login);
 
-            ULoginResp resp = _sesion.UserLoginAction(UData);
+                data.LoginIP = Request.UserHostAddress;
+                data.LoginDataTime = DateTime.Now;
 
+                var userLogin = _sesion.UserLoginAction(data);
+                if (userLogin.IsSuccess)
+                {
+                    //HttpCookie cookie = _session.GenCookie(login.Email);
+                    //ControllerContext.HttpContext.Response.Cookies.Add(cookie);
+
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    ModelState.AddModelError("", userLogin.Status);
+                    return View();
+                }
+            }
             return View();
         }
-
-        public ActionResult Pages_Register()
-        {
-            return View();
-        }
-        public ActionResult Pages_Lock_Screen()
-        {
-            return View();
-        }
-
-
     }
 }

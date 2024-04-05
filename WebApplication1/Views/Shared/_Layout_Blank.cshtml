@@ -20,8 +20,6 @@
 
     @Styles.Render("~/bundles/css")
     @Styles.Render("~/bundles/app/css")
-    <link rel="shortcut icon" href="~/Templaid/images/favicon.ico">
-    <link href="~/Templaid/css/icons.min.css" rel="stylesheet" type="text/css" />
 
     @if (IsSectionDefined("Styles"))
     {
@@ -32,15 +30,7 @@
 
 <body>
 
-    <header id="topnav">
-        @Html.Partial("_Header")
-    </header>
-
-    <div class="wrapper">
         @RenderBody()
-    </div>
-
-
 
     <footer class="footer">
         @Html.Partial("_Footer")
