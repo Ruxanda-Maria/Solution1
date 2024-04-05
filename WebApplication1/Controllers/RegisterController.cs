@@ -3,53 +3,50 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.UI.WebControls;
 using AutoMapper;
 using WebAplication.BusinessLogics;
 using WebAplication.BusinessLogics.Interface;
-using WebAplication.Domains.Entities.Response;
-using WebAplication.Domains.Entities.User;
+using WebAplication.Domain.Entities.User;
 using WebApplication1.Models.User;
 
 namespace WebApplication1.Controllers
 {
-    public class LoginController : Controller
+    public class RegisterController : Controller
     {
-        private readonly ILogin _sesion;
+        // GET: Register
 
-        public LoginController()
+        private readonly ILogin _session;
+        public RegisterController()
         {
             var bl = new BussinesLogic();
-            _sesion = bl.GetLoginBL();
-
+            _session = bl.GetLoginBL();
         }
-
-        public ActionResult Pages_login()
+        public ActionResult Pages_register()
         {
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Pages_login(UserLogin login)
+        public ActionResult Pages_register(UserRegister register)
         {
             if (ModelState.IsValid)
             {
-                var data = Mapper.Map<ULoginData>(login);
+                var data = Mapper.Map<URegisterData>(register);
 
                 data.LoginIP = Request.UserHostAddress;
                 data.LoginDataTime = DateTime.Now;
 
-                var userLogin = _sesion.UserLoginAction(data);
-                if (userLogin.IsSuccess)
+                var userRegister = _session.UserRegisterAction(data);
+                if (userRegister.IsSuccess)
                 {
-                    //HttpCookie cookie = _session.GenCookie(login.Email);
+                    //HttpCookie cookie = _session.GenCookie(register.Email);
                     //ControllerContext.HttpContext.Response.Cookies.Add(cookie);
 
                     return RedirectToAction("Index", "Home");
                 }
                 else
                 {
-                    ModelState.AddModelError("", userLogin.Status);
+                    ModelState.AddModelError("", userRegister.Status);
                     return View();
                 }
             }

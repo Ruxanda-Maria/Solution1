@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WebAplication.Domains.Entities.User
+namespace WebAplication.Domain.Entities.User
 {
-    public class ULoginData
+    public class URegisterData
     {
+        public string Username { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
         public string LoginIP { get; set; }
