@@ -11,7 +11,7 @@ namespace WebApplication1.Controllers
     {
         // GET: Admin
         [AdminMode]
-        public ActionResult Index()
+        public ActionResult Admin()
         {
             SessionStatus();
             if ((string)System.Web.HttpContext.Current.Session["LoginStatus"] != "login")
