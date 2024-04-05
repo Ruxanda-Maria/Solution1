@@ -6,7 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WebAplication.BusinessLogic.AppBL;
+using WebAplication.Domain.Entities.Response;
 using WebAplication.Domain.Entities.User;
+using WebAplication.Domain.Enums;
 using WebAplication.Domains.Entities.Response;
 using WebAplication.Domains.Entities.User;
 
@@ -44,5 +46,44 @@ namespace WebAplication.BusinessLogics.Core
             else
                 return new ULoginResp { IsSuccess = false };
         }
+
+        internal URegisterResp RegisterUpService(URegisterData data)
+        {
+            UserTable existingUser;
+            var validate = new EmailAddressAttribute();
+            if (validate.IsValid(data.Email))
+            {
+                using (var db = new UserContext())
+                {
+                    existingUser = db.Users.FirstOrDefault(u => u.Email == data.Email);
+                }
+
+                if (existingUser != null)
+                {
+                    return new URegisterResp { IsSuccess = false, Status = "User With Email Already Exists" };
+                }
+
+                //var pass = LoginHelper.HashGen(data.Password);
+                var newUser = new UserTable
+                {
+                    Email = data.Email,
+                    Username = data.Username,
+                    Password = data.Password,
+                    LastIp = data.LoginIP,
+                    LastLogin = data.LoginDataTime,
+                    Level = (URole)0,
+                };
+
+                using (var todo = new UserContext())
+                {
+                    todo.Users.Add(newUser);
+                    todo.SaveChanges();
+                }
+                return new URegisterResp { IsSuccess = true };
+            }
+            else
+                return new URegisterResp { IsSuccess = false };
+        }
     }
+
 }

@@ -524,11 +524,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\User\UserData.cs" />
     <Compile Include="Models\User\UserLogin.cs" />
+    <Compile Include="Models\User\UserRegister.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -600,7 +602,7 @@
     <Content Include="Views\Login\Pages_login.cshtml" />
     <Content Include="Views\Home\Pages_lock_screen.cshtml" />
     <Content Include="Views\Home\Pages_recoverpw.cshtml" />
-    <Content Include="Views\Home\Pages_register.cshtml" />
+    <Content Include="Views\Register\Pages_register.cshtml" />
     <Content Include="Views\Shared\_Layout_Blank.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

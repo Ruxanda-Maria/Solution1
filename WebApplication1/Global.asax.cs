@@ -31,6 +31,7 @@ namespace WebApplication1
             Mapper.Initialize(cfg =>
             {
                 cfg.CreateMap<UserLogin, ULoginData>();
+                cfg.CreateMap<UserRegister, URegisterData>();
                 cfg.CreateMap<UserTable, UserMinimal>();
             });
         }

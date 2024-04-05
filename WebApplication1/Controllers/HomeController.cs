@@ -72,10 +72,5 @@ namespace WebApplication1.Controllers
         {
             return View();
         }
-
-        public ActionResult Pages_register()
-        {
-            return View();
-        }
     }
 }
