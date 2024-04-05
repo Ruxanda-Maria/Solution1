@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using WebAplication.BusinessLogics.Core;
 using WebAplication.BusinessLogics.Interface;
 using WebAplication.Domain.Entities.Response;
@@ -21,6 +22,14 @@ namespace WebAplication.BusinessLogics.AppBL
         public URegisterResp UserRegisterAction(URegisterData data)
         {
             return RegisterUpService(data);
+        }
+        public HttpCookie GenCookie(string loginCredential)
+        {
+            return Cookie(loginCredential);
+        }
+        public UserMinimal GetUserByCookie(string apiCookieValue)
+        {
+            return UserCookie(apiCookieValue);
         }
     }
 }

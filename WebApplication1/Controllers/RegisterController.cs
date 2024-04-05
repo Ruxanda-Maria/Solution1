@@ -39,8 +39,8 @@ namespace WebApplication1.Controllers
                 var userRegister = _session.UserRegisterAction(data);
                 if (userRegister.IsSuccess)
                 {
-                    //HttpCookie cookie = _session.GenCookie(register.Email);
-                    //ControllerContext.HttpContext.Response.Cookies.Add(cookie);
+                    HttpCookie cookie = _session.GenCookie(register.Email);
+                    ControllerContext.HttpContext.Response.Cookies.Add(cookie);
 
                     return RedirectToAction("Index", "Home");
                 }

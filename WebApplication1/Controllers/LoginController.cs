@@ -42,8 +42,8 @@ namespace WebApplication1.Controllers
                 var userLogin = _sesion.UserLoginAction(data);
                 if (userLogin.IsSuccess)
                 {
-                    //HttpCookie cookie = _session.GenCookie(login.Email);
-                    //ControllerContext.HttpContext.Response.Cookies.Add(cookie);
+                    HttpCookie cookie = _sesion.GenCookie(login.Email);
+                    ControllerContext.HttpContext.Response.Cookies.Add(cookie);
 
                     return RedirectToAction("Index", "Home");
                 }
