@@ -10,29 +10,26 @@ using WebApplication1.Domain.Entities.User;
 
 namespace WebApplication1.BussinessLogic.DBModel
 {
-    public class SessionBL
+    public class SessionBL : UserApi, ISession
     {
-        public class SessionBL : UserApi, ISession
+        public HttpCookie GenCookie(string loginCredential)
         {
-            public HttpCookie GenCookie(string loginCredential)
-            {
-                return Cookie(loginCredential);
-            }
+            return Cookie(loginCredential);
+        }
 
-            public BoolResp UserLogin(ULoginData data)
-            {
-                return UserLoginAction(data);
-            }
+        public BoolResp UserLogin(ULoginData data)
+        {
+            return UserLoginAction(data);
+        }
 
-            public BoolResp UserRegister(URegisterData data)
-            {
-                return UserRegisterAction(data);
-            }
+        public BoolResp UserRegister(URegisterData data)
+        {
+            return UserRegisterAction(data);
+        }
 
-            public UserMinimal GetUserByCookie(string apiCookieValue)
-            {
-                return UserCookie(apiCookieValue);
-            }
+        public UserMinimal GetUserByCookie(string apiCookieValue)
+        {
+            return UserCookie(apiCookieValue);
         }
     }
 }
