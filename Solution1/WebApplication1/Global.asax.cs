@@ -9,6 +9,9 @@ using System.Web.Security;
 using System.Web.SessionState;
 using AutoMapper;
 using WebApplication1.App_Start;
+using WebApplication1.Domain.Entities.Admin;
+using WebApplication1.Domain.Entities.User;
+using WebApplication1.Models;
 
 namespace WebApplication1
 {

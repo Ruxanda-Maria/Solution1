@@ -7,6 +7,7 @@ using AutoMapper;
 using WebApplication1.BussinessLogic.Interface;
 using WebApplication1.BussinessLogic;
 using WebApplication1.Domain.Entities.User;
+using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
@@ -15,7 +16,7 @@ namespace WebApplication1.Controllers
         private readonly ISession _session;
         public LoginController()
         {
-            var bl = new BussinesLogic();
+            var bl = new BusinessLogic();
             _session = bl.GetSessionBL();
         }
         public void GetCurrentUserAndStatus()
