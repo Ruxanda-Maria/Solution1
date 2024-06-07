@@ -29,5 +29,32 @@ namespace WebApplication1.BussinessLogic.Core
             }
             return new BoolResp { Status = true };
         }
+
+        internal BoolResp UserRegisterAction(URegisterData data)
+        {
+            using (var db = new TableContext())
+            {
+                var user = db.Users.FirstOrDefault(u => u.Username == data.Username);
+                if (user != null)
+                {
+                    return new BoolResp { Status = false, StatusMsg = "User already registered." };
+                }
+                var pass = LoginHelper.HashGen(data.Password);
+                UDbTable newUser = new UDbTable
+                {
+                    Username = data.Username,
+                    Id = 1,
+                    Password = pass,
+                    LastIp = data.LoginIP,
+                    LastLogin = data.LoginDateTime,
+                    Level = 0,
+                    Image = "default.png",
+
+                };
+                db.Users.Add(newUser);
+                db.SaveChanges();
+            }
+            return new BoolResp { Status = true };
+        }
     }
 }
