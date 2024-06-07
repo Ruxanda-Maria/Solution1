@@ -89,5 +89,27 @@ namespace WebApplication1.BussinessLogic.Core
                 db.SaveChanges();
             }
         }
+
+        internal BoolResp EditProductAction(EditProductData data)
+        {
+            using (var db = new TableContext())
+            {
+                Product existingProduct = db.Products.FirstOrDefault(u => u.Name == data.Name);
+                existingProduct.Name = data.Name;
+                existingProduct.Type = data.Type;
+                existingProduct.Price = data.Price;
+                existingProduct.AddedTime = data.AddedTime;
+                existingProduct.Bought = data.Bought;
+                existingProduct.Category = data.Category;
+                existingProduct.XS = data.XS;
+                existingProduct.S = data.S;
+                existingProduct.M = data.M;
+                existingProduct.L = data.L;
+                existingProduct.XL = data.XL;
+                existingProduct.Description = data.Description;
+                db.SaveChanges();
+            }
+            return new BoolResp { Status = true };
+        }
     }
 }

@@ -254,6 +254,7 @@
     <Content Include="Views\Register\Index.cshtml" />
     <Content Include="Views\Admin\AddProduct.cshtml" />
     <Content Include="Views\Admin\AddUser.cshtml" />
+    <Content Include="Views\Admin\EditProduct.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

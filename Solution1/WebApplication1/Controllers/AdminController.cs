@@ -140,5 +140,58 @@ namespace WebApplication1.Controllers
             _admin.DeleteProduct(id);
             return RedirectToAction("AddProduct", "Admin");
         }
+
+        public ActionResult EditProduct(int id)
+        {
+            GetCurrentUserAndStatus();
+            using (var db = new TableContext())
+            {
+                var product = db.Products.FirstOrDefault(u => u.Id == id);
+                var data = Mapper.Map<EditProduct>(product);
+                List<string> TypeList = new List<string> { "Rochie Mireasa", "Rechie Domnisoara", "Incaltaminte", "Accesorii" };
+                List<string> boolList = new List<string> { "True", "False" };
+                List<string> categoryList = new List<string> { "Mirese", "Domnișoare de onoare", "Fetițe" };
+                ViewBag.categoryList = categoryList;
+                ViewBag.boolList = boolList;
+                ViewBag.TypeList = TypeList;
+                ViewBag.productToEdit = data;
+                return View(data);
+            }
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditProduct(EditProduct product, HttpPostedFileBase imageFile)
+        {
+            if (ModelState.IsValid)
+            {
+                if (imageFile != null && imageFile.ContentType == "image/png")
+                {
+                    using (var db = new TableContext())
+                    {
+                        Product existingProduct = db.Products.FirstOrDefault(u => u.Name == product.Name);
+                        var path = Path.Combine(Server.MapPath($"~/Images/product/{existingProduct.Name}.png"));
+                        existingProduct.Image = existingProduct.Name + ".png";
+                        db.SaveChanges();
+                        System.IO.File.Delete(path);
+                        imageFile.SaveAs(path);
+                    }
+                }
+
+                var data = Mapper.Map<EditProductData>(product);
+
+                var editProduct = _admin.EditProduct(data);
+                if (editProduct.Status)
+                {
+                    return RedirectToAction("AddProduct", "Admin");
+                }
+                else
+                {
+                    ModelState.AddModelError("", editProduct.StatusMsg);
+                    return View();
+                }
+            }
+            return View();
+        }
     }
 }
