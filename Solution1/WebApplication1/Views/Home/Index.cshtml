@@ -1,0 +1,147 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    var productsList = ViewBag.productsList;
+}
+
+<section class="hero">
+    <div class="hero__slider owl-carousel">
+        <div class="hero__items set-bg" data-setbg="../Images/hero/hero-1.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-5 col-lg-7 col-md-8">
+                        <div class="hero__text">
+                            <h6>Colecția nouă</h6>
+                            <h2>Primăvară-Vară Colecția 2024</h2>
+                            <p>
+                                O etichetă specializată care creează elemente esențiale de lux. Creat etic cu un
+                                angajament neclintit față de o calitate excepțională
+                            </p>
+                            <a href="@Url.Action("Shop", "Home", new {type = "All",category = "All", minPrice = 0, maxPrice = 0, size = "All"})" class="primary-btn">Cumpără acum<span class="arrow_right"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero__items set-bg" data-setbg="../Images/hero/hero-2.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-5 col-lg-7 col-md-8">
+                        <div class="hero__text">
+                            <h6>Colecția nouă</h6>
+                            <h2>Primăvară-Vară Colecția 2024</h2>
+                            <p>
+                                O etichetă specializată care creează elemente esențiale de lux. Creat etic cu un
+                                angajament neclintit față de o calitate excepțională
+                            </p>
+                            <a href="@Url.Action("Shop", "Home", new {type = "All",category = "All", minPrice = 0, maxPrice = 0, size = "All"})" class="primary-btn">Cumpără acum<span class="arrow_right"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="banner spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 offset-lg-4">
+                <div class="banner__item">
+                    <div class="banner__item__pic">
+                        <img src="../Images/banner/banner-1.jpg" alt="">
+                    </div>
+                    <div class="banner__item__text">
+                        <h2>Haine Colecția 2024</h2>
+                        <a href="@Url.Action("Shop", "Home", new {type = "All",category = "All", minPrice = 0, maxPrice = 0, size = "All"})">Cumpără acum</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="banner__item banner__item--middle">
+                    <div class="banner__item__pic">
+                        <img src="../Images/banner/banner-2.jpg" alt="">
+                    </div>
+                    <div class="banner__item__text">
+                        <h2>Accesorii</h2>
+                        <a href="@Url.Action("Shop", "Home", new {type = "Accesorii",category = "All", minPrice = 0, maxPrice = 0, size = "All"})">Cumpără acum</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="banner__item banner__item--last">
+                    <div class="banner__item__pic">
+                        <img src="../Images/banner/banner-3.jpg" alt="">
+                    </div>
+                    <div class="banner__item__text">
+                        <h2>Încălțăminte Primăvara 2024</h2>
+                        <a href="@Url.Action("Shop", "Home", new {type = "Incaltaminte",category = "All", minPrice = 0, maxPrice = 0, size = "All"})">Cumpără acum</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="product spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="filter__controls">
+                    <li class="active">Cele mai vândute</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row product__filter">
+            @foreach (var product in productsList)
+            {
+                <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="@Url.Content("~/Images/product/" + product.Image)">
+                            <ul class="product__hover">
+                                <li><a href="@Url.Action("ShopDetails", "Home", new {id = product.Id})"><img src="../Images/icon/search.png" alt=""></a></li>
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6>@product.Name</h6>
+                            <a href="#" class="add-cart">+ Adaugă în coș</a>
+                            <h5>@product.Price $</h5>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<section class="categories spad">
+    <div class="container">
+        <div class="row"></div>
+    </div>
+</section>
+
+<section class="instagram spad mb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="instagram__pic">
+                    <div class="instagram__pic__item set-bg" data-setbg="../Images/instagram/instagram-1.jpg"></div>
+                    <div class="instagram__pic__item set-bg" data-setbg="../Images/instagram/instagram-2.jpg"></div>
+                    <div class="instagram__pic__item set-bg" data-setbg="../Images/instagram/instagram-3.jpg"></div>
+                    <div class="instagram__pic__item set-bg" data-setbg="../Images/instagram/instagram-4.jpg"></div>
+                    <div class="instagram__pic__item set-bg" data-setbg="../Images/instagram/instagram-5.jpg"></div>
+                    <div class="instagram__pic__item set-bg" data-setbg="../Images/instagram/instagram-6.jpg"></div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="instagram__text">
+                    <h2>Instagram</h2>
+                    <p>
+                        Urmărește cele mai noi tendințe în modă masculină. Descoperă outfit-uri stilate, accesorii de calitate și idei de stil pentru fiecare ocazie.
+                    </p>
+                    <h3>#Male_Fashion</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
