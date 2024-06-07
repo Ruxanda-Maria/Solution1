@@ -1,0 +1,125 @@
+﻿
+@{
+    ViewBag.Title = "Shop";
+    var productsList = ViewBag.productsList;
+}
+
+<section class="breadcrumb-option">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb__text">
+                    <h4>Magazin</h4>
+                    <div class="breadcrumb__links">
+                        <a href="@Url.Action("")">Acasă</a>
+                        <span>Magazin</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="shop spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="shop__sidebar">
+                    <div class="shop__sidebar__accordion">
+                        <div class="accordion" id="accordionExample">
+                            <div class="card">
+                                <div class="card-heading">
+                                    <a data-toggle="collapse" data-target="#collapseOne">Categorii</a>
+                                </div>
+                                <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <div class="shop__sidebar__categories">
+                                            <ul class="nice-scroll">
+                                                <li><a href="@Url.Action("Shop", "Home", new {type = "All", category = "Mirese", minPrice = 0, maxPrice = 0, size = "All"})">Mirese</a></li>
+                                                <li><a href="@Url.Action("Shop", "Home", new {type = "All", category = "Domnișoare de onoare", minPrice = 0, maxPrice = 0, size = "All"})">Domnișoare de onoare</a></li>
+                                                <li><a href="@Url.Action("Shop", "Home", new {type = "All", category = "Fetițe", minPrice = 0, maxPrice = 0, size = "All"})">Fetițe</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-heading">
+                                    <a data-toggle="collapse" data-target="#collapseOne">Tipuri</a>
+                                </div>
+                                <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <div class="shop__sidebar__categories">
+                                            <ul class="nice-scroll">
+                                                <li><a href="@Url.Action("Shop", "Home", new {type = "Rochie Mireasa", category = "All", minPrice = 0, maxPrice = 0, size = "All"})">Rochii Mireasa</a></li>
+                                                <li><a href="@Url.Action("Shop", "Home", new {type = "Rechie Domnisoara", category = "All", minPrice = 0, maxPrice = 0, size = "All"})">Rochii Domnisoare de Onoare</a></li>
+                                                <li><a href="@Url.Action("Shop", "Home", new {type = "Incaltaminte", category = "All", minPrice = 0, maxPrice = 0, size = "All"})">Incaltaminte</a></li>
+                                                <li><a href="@Url.Action("Shop", "Home", new {type = "Accesorii", category = "All", minPrice = 0, maxPrice = 0, size = "All"})">Accesorii</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-heading">
+                                    <a data-toggle="collapse" data-target="#collapseThree">Filtrează preț</a>
+                                </div>
+                                <div id="collapseThree" class="collapse show" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <div class="shop__sidebar__price">
+                                            <ul>
+                                                <li><a href="@Url.Action("Shop", "Home", new {type = "All", category = "All", minPrice = 0, maxPrice = 50, size = "All"})">$0.00 - $50.00</a></li>
+                                                <li><a href="@Url.Action("Shop", "Home", new {type = "All", category = "All", minPrice = 50, maxPrice = 100, size = "All"})">$50.00 - $100.00</a></li>
+                                                <li><a href="@Url.Action("Shop", "Home", new {type = "All", category = "All", minPrice = 100, maxPrice = 200, size = "All"})">$100.00 - $200.00</a></li>
+                                                <li><a href="@Url.Action("Shop", "Home", new {type = "All", category = "All", minPrice = 200, maxPrice = 99999, size = "All"})">200.00+</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-heading">
+                                    <a data-toggle="collapse" data-target="#collapseFour">Mărime</a>
+                                </div>
+                                <div id="collapseFour" class="collapse show" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <div class="shop__sidebar__size">
+                                            <ul style="display:flex; flex-wrap:wrap; list-style-type: none;">
+                                                <li><a href="@Url.Action("Shop", "Home", new {type = "All", category = "All", minPrice = 0, maxPrice = 0, size = "XS"})"><label for="xs">xs</label></a></li>
+                                                <li><a href="@Url.Action("Shop", "Home", new {type = "All", category = "All", minPrice = 0, maxPrice = 0, size = "S"})"><label for="s">s</label></a></li>
+                                                <li><a href="@Url.Action("Shop", "Home", new {type = "All", category = "All", minPrice = 0, maxPrice = 0, size = "M"})"><label for="m">m</label></a></li>
+                                                <li><a href="@Url.Action("Shop", "Home", new {type = "All", category = "All", minPrice = 0, maxPrice = 0, size = "L"})"><label for="l">l</label></a></li>
+                                                <li><a href="@Url.Action("Shop", "Home", new {type = "All", category = "All", minPrice = 0, maxPrice = 0, size = "XL"})"><label for="xl">xl</label></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="row">
+                    @foreach (var product in productsList)
+                    {
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="product__item">
+                                <div class="product__item__pic set-bg" data-setbg="@Url.Content("~/Images/product/" + product.Image)">
+                                    <ul class="product__hover">
+                                        <li><a href="@Url.Action("ShopDetails", "Home", new {id = product.Id})"><img src="../Images/icon/search.png" alt=""></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product__item__text">
+                                    <h6>@product.Name</h6>
+                                    <a href="#" class="add-cart">+ Adaugă în coș</a>
+                                    <h5>@product.Price</h5>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
