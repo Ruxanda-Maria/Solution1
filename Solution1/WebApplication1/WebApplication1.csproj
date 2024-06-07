@@ -256,6 +256,7 @@
     <Content Include="Views\Admin\AddUser.cshtml" />
     <Content Include="Views\Admin\EditProduct.cshtml" />
     <Content Include="Views\Home\Shop.cshtml" />
+    <Content Include="Views\Home\ShopDetails.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

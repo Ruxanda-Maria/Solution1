@@ -1,0 +1,121 @@
+﻿
+@{
+    var product = ViewBag.product;
+    var productsList = ViewBag.productsList;
+    ViewBag.Title = "ShopDetails";
+}
+
+<section class="shop-details">
+    <div class="product__details__pic">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="product__details__breadcrumb">
+                        <a href="/Home/Index">Acasă</a>
+                        <a href="@Url.Action("Shop", "Home", new {type = "All", category = "All", minPrice = 0, maxPrice = 0, size = "All"})">Magazin</a>
+                        <span>Detalii Produs</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <ul class="nav nav-tabs" role="tablist">
+                    </ul>
+                </div>
+                <div class="col-lg-6 col-md-9">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                            <div class="product__details__pic__item">
+                                <img src="@Url.Content("~/Images/product/" + product.Image)" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="product__details__content">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-8">
+                    <div class="product__details__text">
+                        <h4>@product.Name</h4>
+                        <h3>@product.Price $</h3>
+                        <p>@product.Description</p>
+                        <div class="product__details__option">
+                            <div class="product__details__option__size">
+                                <span>Mărime:</span>
+                                <label for="xxl">
+                                    xs
+                                    <input type="radio" id="xxl">
+                                </label>
+                                <label class="active" for="xl">
+                                    s
+                                    <input type="radio" id="xl">
+                                </label>
+                                <label for="l">
+                                    m
+                                    <input type="radio" id="l">
+                                </label>
+                                <label for="sm">
+                                    l
+                                    <input type="radio" id="sm">
+                                </label>
+                                <label for="sm">
+                                    xl
+                                    <input type="radio" id="sm">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="product__details__cart__option">
+                            <div class="quantity">
+                                <div class="pro-qty">
+                                    <input type="text" value="1">
+                                </div>
+                            </div>
+                            <a href="#" class="primary-btn">adaugă în coș</a>
+                        </div>
+                        <div class="product__details__last__option">
+                            <ul>
+                                <li><span>Categorie:</span> @product.Type</li>
+                                <li><span>Tag:</span> @product.Type, @product.Category </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="related spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="related-title">Produs aferent</h3>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var prod in productsList)
+            {
+                <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="@Url.Content("~/Images/product/" + prod.Image)">
+                            <ul class="product__hover">
+                                <li><a href="#"><img src="../Images/icon/search.png" alt=""></a></li>
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6>@prod.Name</h6>
+                            <a href="#" class="add-cart">+ Adaugă în coș</a>
+                            <h5>@prod.Price $</h5>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
