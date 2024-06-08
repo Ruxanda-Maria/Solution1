@@ -1,11 +1,11 @@
-﻿using System;
+﻿using WebApplication1.BusinessLogic;
+using WebApplication1.BusinessLogic.Interfaces;
+using WebApplication1.Extencion;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using WebApplication1.BussinessLogic.Interface;
-using WebApplication1.BussinessLogic;
-using WebApplication1.Extension;
 
 namespace WebApplication1.Controllers
 {
@@ -15,7 +15,7 @@ namespace WebApplication1.Controllers
 
         public BaseController()
         {
-            var bl = new BusinessLogic();
+            var bl = new BussinesLogic();
             _session = bl.GetSessionBL();
         }
 

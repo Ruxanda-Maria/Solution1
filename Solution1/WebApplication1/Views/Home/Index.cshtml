@@ -1,7 +1,7 @@
 ﻿
 @{
     ViewBag.Title = "Index";
-    var productsList = ViewBag.productsList;
+     var productsList = ViewBag.productsList;
 }
 
 <section class="hero">
@@ -12,10 +12,11 @@
                     <div class="col-xl-5 col-lg-7 col-md-8">
                         <div class="hero__text">
                             <h6>Colecția nouă</h6>
-                            <h2>Primăvară-Vară Colecția 2024</h2>
+                            <h2>
+                                Colecția de Rochii de Mireasă 2024
+                            </h2>
                             <p>
-                                O etichetă specializată care creează elemente esențiale de lux. Creat etic cu un
-                                angajament neclintit față de o calitate excepțională
+                                Descoperă eleganța și rafinamentul rochiilor noastre de mireasă. Create cu atenție la detalii și calitate excepțională.
                             </p>
                             <a href="@Url.Action("Shop", "Home", new {type = "All",category = "All", minPrice = 0, maxPrice = 0, size = "All"})" class="primary-btn">Cumpără acum<span class="arrow_right"></span></a>
                         </div>
@@ -29,10 +30,10 @@
                     <div class="col-xl-5 col-lg-7 col-md-8">
                         <div class="hero__text">
                             <h6>Colecția nouă</h6>
-                            <h2>Primăvară-Vară Colecția 2024</h2>
+                            <h2>Colecția de Rochii de Mireasă 2024</h2>
                             <p>
-                                O etichetă specializată care creează elemente esențiale de lux. Creat etic cu un
-                                angajament neclintit față de o calitate excepțională
+                                Explorează colecția noastră de rochii de mireasă, proiectate pentru a aduce un plus de grație și stil în ziua ta specială.
+
                             </p>
                             <a href="@Url.Action("Shop", "Home", new {type = "All",category = "All", minPrice = 0, maxPrice = 0, size = "All"})" class="primary-btn">Cumpără acum<span class="arrow_right"></span></a>
                         </div>
@@ -52,7 +53,7 @@
                         <img src="../Images/banner/banner-1.jpg" alt="">
                     </div>
                     <div class="banner__item__text">
-                        <h2>Haine Colecția 2024</h2>
+                        <h2>Rochii Colecția 2024</h2>
                         <a href="@Url.Action("Shop", "Home", new {type = "All",category = "All", minPrice = 0, maxPrice = 0, size = "All"})">Cumpără acum</a>
                     </div>
                 </div>
@@ -74,7 +75,7 @@
                         <img src="../Images/banner/banner-3.jpg" alt="">
                     </div>
                     <div class="banner__item__text">
-                        <h2>Încălțăminte Primăvara 2024</h2>
+                        <h2>Încălțăminte</h2>
                         <a href="@Url.Action("Shop", "Home", new {type = "Incaltaminte",category = "All", minPrice = 0, maxPrice = 0, size = "All"})">Cumpără acum</a>
                     </div>
                 </div>
@@ -93,23 +94,23 @@
             </div>
         </div>
         <div class="row product__filter">
-            @foreach (var product in productsList)
-            {
-                <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
-                    <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="@Url.Content("~/Images/product/" + product.Image)">
-                            <ul class="product__hover">
-                                <li><a href="@Url.Action("ShopDetails", "Home", new {id = product.Id})"><img src="../Images/icon/search.png" alt=""></a></li>
-                            </ul>
-                        </div>
-                        <div class="product__item__text">
-                            <h6>@product.Name</h6>
-                            <a href="#" class="add-cart">+ Adaugă în coș</a>
-                            <h5>@product.Price $</h5>
-                        </div>
-                    </div>
-                </div>
-            }
+             @foreach (var product in productsList)
+             {
+                  <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
+                       <div class="product__item">
+                            <div class="product__item__pic set-bg" data-setbg="@Url.Content("~/Images/product/" + product.Image)">
+                                 <ul class="product__hover">
+                                      <li><a href="@Url.Action("ShopDetails", "Home", new {id = product.Id})"><img src="../Images/icon/search.png" alt=""></a></li>
+                                 </ul>
+                            </div>
+                            <div class="product__item__text">
+                                 <h6>@product.Name</h6>
+                                 <a href="#" class="add-cart">+ Adaugă în coș</a>
+                                 <h5>@product.Price $</h5>
+                            </div>
+                       </div>
+                  </div>
+             }
         </div>
     </div>
 </section>
@@ -137,9 +138,9 @@
                 <div class="instagram__text">
                     <h2>Instagram</h2>
                     <p>
-                        Urmărește cele mai noi tendințe în modă masculină. Descoperă outfit-uri stilate, accesorii de calitate și idei de stil pentru fiecare ocazie.
+                        Urmărește cele mai noi tendințe în moda pentru nunți. Descoperă rochii de mireasă stilate, accesorii de calitate și idei de stil pentru ziua ta specială.
                     </p>
-                    <h3>#Male_Fashion</h3>
+                    <h3>#Made_With_Love</h3>
                 </div>
             </div>
         </div>

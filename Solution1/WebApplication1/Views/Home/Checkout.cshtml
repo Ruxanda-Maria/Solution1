@@ -4,160 +4,161 @@
 }
 
 
-<!-- Breadcrumb Section Begin -->
-<section class="breadcrumb-option">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="breadcrumb__text">
-                    <h4>Comandă</h4>
-                    <div class="breadcrumb__links">
-                        <a href="@Url.Action("")">">Acasă</a>
-                        <a href="@Url.Action("Shop", "Home")">Magazin</a>
-                        <span>Comandă</span>
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__text">
+                        <h4>Comandă</h4>
+                        <div class="breadcrumb__links">
+                            <a href="@Url.Action("")">">Acasă</a>
+                            <a href="@Url.Action("Shop", "Home")">Magazin</a>
+                            <span>Comandă</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<!-- Breadcrumb Section End -->
-<!-- Checkout Section Begin -->
-<section class="checkout spad">
-    <div class="container">
-        <div class="checkout__form">
-            <form action="#">
-                <div class="row">
-                    <div class="col-lg-8 col-md-6">
-                        <h6 class="coupon__code">
-                            <span class="icon_tag_alt"></span> Aveți cupon? <a href="#">
-                                Click
-                                aici
-                            </a> ca să introduci codul
-                        </h6>
-                        <h6 class="checkout__title">Detalii despre facturare</h6>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="checkout__input">
-                                    <p>Nume<span>*</span></p>
-                                    <input type="text">
+    </section>
+    <!-- Breadcrumb Section End -->
+    <!-- Checkout Section Begin -->
+    <section class="checkout spad">
+        <div class="container">
+            <div class="checkout__form">
+                <form action="#">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-6">
+                            <h6 class="coupon__code">
+                                <span class="icon_tag_alt"></span> Aveți cupon? <a href="#">
+                                    Click
+                                    aici
+                                </a> ca să introduci codul
+                            </h6>
+                            <h6 class="checkout__title">Detalii despre facturare</h6>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="checkout__input">
+                                        <p>Nume<span>*</span></p>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="checkout__input">
+                                        <p>Prenume<span>*</span></p>
+                                        <input type="text">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="checkout__input">
-                                    <p>Prenume<span>*</span></p>
-                                    <input type="text">
+                            <div class="checkout__input">
+                                <p>Țara<span>*</span></p>
+                                <input type="text">
+                            </div>
+                            <div class="checkout__input">
+                                <p>Adresa<span>*</span></p>
+                                <input type="text" placeholder="Strada" class="checkout__input__add">
+                                <input type="text" placeholder="Apartamentul">
+                            </div>
+                            <div class="checkout__input">
+                                <p>Oraș<span>*</span></p>
+                                <input type="text">
+                            </div>
+                            <div class="checkout__input">
+                                <p>Regiune<span>*</span></p>
+                                <input type="text">
+                            </div>
+                            <div class="checkout__input">
+                                <p>Codul poștal / ZIP<span>*</span></p>
+                                <input type="text">
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="checkout__input">
+                                        <p>Telefon<span>*</span></p>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="checkout__input">
+                                        <p>Email<span>*</span></p>
+                                        <input type="text">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="checkout__input">
-                            <p>Țara<span>*</span></p>
-                            <input type="text">
-                        </div>
-                        <div class="checkout__input">
-                            <p>Adresa<span>*</span></p>
-                            <input type="text" placeholder="Strada" class="checkout__input__add">
-                            <input type="text" placeholder="Apartamentul">
-                        </div>
-                        <div class="checkout__input">
-                            <p>Oraș<span>*</span></p>
-                            <input type="text">
-                        </div>
-                        <div class="checkout__input">
-                            <p>Regiune<span>*</span></p>
-                            <input type="text">
-                        </div>
-                        <div class="checkout__input">
-                            <p>Codul poștal / ZIP<span>*</span></p>
-                            <input type="text">
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="checkout__input">
-                                    <p>Telefon<span>*</span></p>
-                                    <input type="text">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="checkout__input">
-                                    <p>Email<span>*</span></p>
-                                    <input type="text">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="checkout__input__checkbox">
-                            <label for="acc">
-                                Creați un cont?
-                                <input type="checkbox" id="acc">
-                                <span class="checkmark"></span>
-                            </label>
-                            <p>
-                                Creați un cont introducând informațiile de mai jos. Dacă sunteți un client care revine
-                                vă rugăm să vă conectați în partea de sus a paginii
-                            </p>
-                        </div>
-                        <div class="checkout__input">
-                            <p>Parola profillului<span>*</span></p>
-                            <input type="text">
-                        </div>
-                        <div class="checkout__input__checkbox">
-                            <label for="diff-acc">
-                                Notă despre comanda dvs., de exemplu, cod special pentru livrare
-                                <input type="checkbox" id="diff-acc">
-                                <span class="checkmark"></span>
-                            </label>
-                        </div>
-                        <div class="checkout__input">
-                            <p>Note pentru comandă<span>*</span></p>
-                            <input type="text"
-                                   placeholder="Notes about your order, e.g. special notes for delivery.">
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="checkout__order">
-                            <h4 class="order__title">Comanda dumneavoastră</h4>
-                            <div class="checkout__order__products">Produse <span>Total</span></div>
-                            <ul class="checkout__total__products">
-                                <li>01. Vanilla salted caramel <span>$ 300.0</span></li>
-                                <li>02. German chocolate <span>$ 170.0</span></li>
-                                <li>03. Sweet autumn <span>$ 170.0</span></li>
-                                <li>04. Cluten free mini dozen <span>$ 110.0</span></li>
-                            </ul>
-                            <ul class="checkout__total__all">
-                                <li>Subtotal <span>$750.99</span></li>
-                                <li>Total <span>$750.99</span></li>
-                            </ul>
                             <div class="checkout__input__checkbox">
-                                <label for="acc-or">
+                                <label for="acc">
                                     Creați un cont?
-                                    <input type="checkbox" id="acc-or">
+                                    <input type="checkbox" id="acc">
                                     <span class="checkmark"></span>
                                 </label>
+                                <p>
+                                    Creați un cont introducând informațiile de mai jos. Dacă sunteți un client care revine
+                                    vă rugăm să vă conectați în partea de sus a paginii
+                                </p>
                             </div>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adip elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua.
-                            </p>
-                            <div class="checkout__input__checkbox">
-                                <label for="payment">
-                                    Verificarea plată
-                                    <input type="checkbox" id="payment">
-                                    <span class="checkmark"></span>
-                                </label>
+                            <div class="checkout__input">
+                                <p>Parola profillului<span>*</span></p>
+                                <input type="text">
                             </div>
                             <div class="checkout__input__checkbox">
-                                <label for="paypal">
-                                    Paypal
-                                    <input type="checkbox" id="paypal">
+                                <label for="diff-acc">
+                                    Notă despre comanda dvs., de exemplu, cod special pentru livrare
+                                    <input type="checkbox" id="diff-acc">
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
-                            <button type="submit" class="site-btn">Comandă</button>
+                            <div class="checkout__input">
+                                <p>Note pentru comandă<span>*</span></p>
+                                <input type="text"
+                                       placeholder="Notes about your order, e.g. special notes for delivery.">
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="checkout__order">
+                                <h4 class="order__title">Comanda dumneavoastră</h4>
+                                <div class="checkout__order__products">Produse <span>Total</span></div>
+                                <ul class="checkout__total__products">
+                                    <li>01. Vanilla salted caramel <span>$ 300.0</span></li>
+                                    <li>02. German chocolate <span>$ 170.0</span></li>
+                                    <li>03. Sweet autumn <span>$ 170.0</span></li>
+                                    <li>04. Cluten free mini dozen <span>$ 110.0</span></li>
+                                </ul>
+                                <ul class="checkout__total__all">
+                                    <li>Subtotal <span>$750.99</span></li>
+                                    <li>Total <span>$750.99</span></li>
+                                </ul>
+                                <div class="checkout__input__checkbox">
+                                    <label for="acc-or">
+                                        Creați un cont?
+                                        <input type="checkbox" id="acc-or">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adip elit, sed do eiusmod tempor incididunt
+                                    ut labore et dolore magna aliqua.
+                                </p>
+                                <div class="checkout__input__checkbox">
+                                    <label for="payment">
+                                        Verificarea plată
+                                        <input type="checkbox" id="payment">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="checkout__input__checkbox">
+                                    <label for="paypal">
+                                        Paypal
+                                        <input type="checkbox" id="paypal">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <button type="submit" class="site-btn">Comandă</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
-    </div>
-</section>
-<!-- Checkout Section End -->
+    </section>
+    <!-- Checkout Section End -->
+ 

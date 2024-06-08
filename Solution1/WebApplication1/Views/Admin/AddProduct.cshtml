@@ -1,153 +1,153 @@
 ﻿
 @{
-    ViewBag.Title = "AddProduct";
-    var productsList = ViewBag.productsList;
-    List<string> TypeList = ViewBag.TypeList;
-    List<string> boolList = ViewBag.boolList;
-    List<string> categoryList = ViewBag.categoryList;
+     ViewBag.Title = "AddProduct";
+     var productsList = ViewBag.productsList;
+     List<string> TypeList = ViewBag.TypeList;
+     List<string> boolList = ViewBag.boolList;
+     List<string> categoryList = ViewBag.categoryList;
 }
 @model WebApplication1.Models.AddProduct
 
 <section class="contact spad">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="contact__form">
-                    @Html.ValidationSummary(true)
-                    @using (Html.BeginForm("AddProduct", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
-                    {
-                        @Html.AntiForgeryToken()
-                        <form action="#">
-                            <div class="row">
-                                <div class="form-group col-lg-12">
-                                    @Html.TextBoxFor(m => m.Name, new
-                               {
-                                    type = "text",
-                                    @class = "form-control",
-                                    placeholder = "Name",
-                                    required = true,
-                               })
-                                </div>
-                                <div class="form-group col-lg-3">
-                                    @Html.DropDownListFor(m => m.Type, new SelectList(ViewBag.TypeList as System.Collections.IEnumerable, "Text"), "Tipul Produsului", new
-                               {
-                                    @class = "form-control",
-                                    required = "required",
-                               })
-                                </div>
-                                <div class="form-group col-lg-3">
-                                    @Html.DropDownListFor(m => m.Category, new SelectList(ViewBag.categoryList as System.Collections.IEnumerable, "Text"), "Categoria Produsului", new
-                               {
-                                    @class = "form-control",
-                                    required = "required",
-                               })
-                                </div>
-                                <div class="form-group col-lg-3">
-                                    @Html.DropDownListFor(m => m.XS, new SelectList(ViewBag.boolList as System.Collections.IEnumerable, "Text"), "Exista Marimea XS", new
-                               {
-                                    @class = "form-control",
-                                    required = "required",
-                               })
-                                </div>
-                                <div class="form-group col-lg-3">
-                                    @Html.DropDownListFor(m => m.S, new SelectList(ViewBag.boolList as System.Collections.IEnumerable, "Text"), "Exista Marimea S", new
-                               {
-                                    @class = "form-control",
-                                    required = "required",
-                               })
-                                </div>
-                                <div class="form-group col-lg-3">
-                                    @Html.DropDownListFor(m => m.M, new SelectList(ViewBag.boolList as System.Collections.IEnumerable, "Text"), "Exista Marimea M", new
-                               {
-                                    @class = "form-control",
-                                    required = "required",
-                               })
-                                </div>
-                                <div class="form-group col-lg-3">
-                                    @Html.DropDownListFor(m => m.L, new SelectList(ViewBag.boolList as System.Collections.IEnumerable, "Text"), "Exista Marimea L", new
-                               {
-                                    @class = "form-control",
-                                    required = "required",
-                               })
-                                </div>
-                                <div class="form-group col-lg-3">
-                                    @Html.DropDownListFor(m => m.XL, new SelectList(ViewBag.boolList as System.Collections.IEnumerable, "Text"), "Exista Marimea XL", new
-                               {
-                                    @class = "form-control",
-                                    required = "required",
-                               })
-                                </div>
-                                <div class="col-lg-12">
-                                    <input type="file" id="imageFile" required name="imageFile" accept="image/png" class="form-control" />
-                                </div>
-                                <div class="form-group col-lg-12">
-                                    @Html.TextBoxFor(m => m.Price, new
-                               {
-                                    type = "number",
-                                    @class = "form-control",
-                                    placeholder = "Price",
-                                    min = 0,
-                                    required = true,
-                               })
-                                </div>
-                                <div class="form-group col-lg-12">
-                                    @Html.TextBoxFor(m => m.AddedTime, new
-                               {
-                                    type = "date",
-                                    @class = "form-control",
-                                    placeholder = "Added Time",
-                                    required = true,
-                               })
-                                </div>
-                                <div class="form-group col-lg-12">
-                                    @Html.TextBoxFor(m => m.Description, new
-                               {
-                                    type = "text",
-                                    @class = "form-control",
-                                    placeholder = "Description",
-                                    required = true,
-                               })
-                                </div>
-                                <div class="col-lg-12">
-                                    <button type="submit" class="site-btn">Adaugă Produs</button>
-                                </div>
-                            </div>
-                        </form>
-                    }
-                </div>
-            </div>
-        </div>
-    </div>
+     <div class="container">
+          <div class="row">
+               <div class="col-lg-12">
+                    <div class="contact__form">
+                         @Html.ValidationSummary(true)
+                         @using (Html.BeginForm("AddProduct", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                         {
+                              @Html.AntiForgeryToken()
+                              <form action="#">
+                                   <div class="row">
+                                        <div class="form-group col-lg-12">
+                                             @Html.TextBoxFor(m => m.Name, new
+                                        {
+                                             type = "text",
+                                             @class = "form-control",
+                                             placeholder = "Name",
+                                             required = true,
+                                        })
+                                        </div>
+                                        <div class="form-group col-lg-3">
+                                             @Html.DropDownListFor(m => m.Type, new SelectList(ViewBag.TypeList as System.Collections.IEnumerable, "Text"), "Tipul Produsului", new
+                                        {
+                                             @class = "form-control",
+                                             required = "required",
+                                        })
+                                        </div>
+                                        <div class="form-group col-lg-3">
+                                             @Html.DropDownListFor(m => m.Category, new SelectList(ViewBag.categoryList as System.Collections.IEnumerable, "Text"), "Categoria Produsului", new
+                                        {
+                                             @class = "form-control",
+                                             required = "required",
+                                        })
+                                        </div>
+                                        <div class="form-group col-lg-3">
+                                             @Html.DropDownListFor(m => m.XS, new SelectList(ViewBag.boolList as System.Collections.IEnumerable, "Text"), "Exista Marimea XS", new
+                                        {
+                                             @class = "form-control",
+                                             required = "required",
+                                        })
+                                        </div>
+                                        <div class="form-group col-lg-3">
+                                             @Html.DropDownListFor(m => m.S, new SelectList(ViewBag.boolList as System.Collections.IEnumerable, "Text"), "Exista Marimea S", new
+                                        {
+                                             @class = "form-control",
+                                             required = "required",
+                                        })
+                                        </div>
+                                        <div class="form-group col-lg-3">
+                                             @Html.DropDownListFor(m => m.M, new SelectList(ViewBag.boolList as System.Collections.IEnumerable, "Text"), "Exista Marimea M", new
+                                        {
+                                             @class = "form-control",
+                                             required = "required",
+                                        })
+                                        </div>
+                                        <div class="form-group col-lg-3">
+                                             @Html.DropDownListFor(m => m.L, new SelectList(ViewBag.boolList as System.Collections.IEnumerable, "Text"), "Exista Marimea L", new
+                                        {
+                                             @class = "form-control",
+                                             required = "required",
+                                        })
+                                        </div>
+                                        <div class="form-group col-lg-3">
+                                             @Html.DropDownListFor(m => m.XL, new SelectList(ViewBag.boolList as System.Collections.IEnumerable, "Text"), "Exista Marimea XL", new
+                                        {
+                                             @class = "form-control",
+                                             required = "required",
+                                        })
+                                        </div>
+                                        <div class="col-lg-12">
+                                             <input type="file" id="imageFile" required name="imageFile" accept="image/png" class="form-control" />
+                                        </div>
+                                        <div class="form-group col-lg-12">
+                                             @Html.TextBoxFor(m => m.Price, new
+                                        {
+                                             type = "number",
+                                             @class = "form-control",
+                                             placeholder = "Price",
+                                             min = 0,
+                                             required = true,
+                                        })
+                                        </div>
+                                        <div class="form-group col-lg-12">
+                                             @Html.TextBoxFor(m => m.AddedTime, new
+                                        {
+                                             type = "date",
+                                             @class = "form-control",
+                                             placeholder = "Added Time",
+                                             required = true,
+                                        })
+                                        </div>
+                                        <div class="form-group col-lg-12">
+                                             @Html.TextBoxFor(m => m.Description, new
+                                        {
+                                             type = "text",
+                                             @class = "form-control",
+                                             placeholder = "Description",
+                                             required = true,
+                                        })
+                                        </div>
+                                        <div class="col-lg-12">
+                                             <button type="submit" class="site-btn">Adaugă Produs</button>
+                                        </div>
+                                   </div>
+                              </form>
+                         }
+                    </div>
+               </div>
+          </div>
+     </div>
 </section>
 
 <section class="product spad">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <ul class="filter__controls">
-                    <li class="active">Produse Existente</li>
-                </ul>
-            </div>
-        </div>
-        <div class="row product__filter">
-            @foreach (var product in productsList)
-            {
-                <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
-                    <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="@Url.Content("~/Images/product/" + product.Image)">
-                            <ul class="product__hover">
-                                <li>@product.AddedTime.Date.ToString("MM/dd/yyyy")</li>
-                                <li><a href="@Url.Action("EditProduct", "Admin", new {id = product.Id})">Editare</a></li>
-                            </ul>
-                        </div>
-                        <div class="product__item__text">
-                            <h6>@product.Name</h6>
-                            <a href="@Url.Action("DeleteProduct", "Admin", new {id = product.Id})" class="add-cart">Șterge Produs</a>
-                            <h5>@product.Price $</h5>
-                        </div>
+     <div class="container">
+          <div class="row">
+               <div class="col-lg-12">
+                    <ul class="filter__controls">
+                         <li class="active">Produse Existente</li>
+                    </ul>
+               </div>
+          </div>
+          <div class="row product__filter">
+               @foreach (var product in productsList)
+               {
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
+                         <div class="product__item">
+                              <div class="product__item__pic set-bg" data-setbg="@Url.Content("~/Images/product/" + product.Image)">
+                                   <ul class="product__hover">
+                                        <li>@product.AddedTime.Date.ToString("MM/dd/yyyy")</li>
+                                        <li><a href="@Url.Action("EditProduct", "Admin", new {id = product.Id})">Editare</a></li>
+                                   </ul>
+                              </div>
+                              <div class="product__item__text">
+                                   <h6>@product.Name</h6>
+                                   <a href="@Url.Action("DeleteProduct", "Admin", new {id = product.Id})" class="add-cart">Șterge Produs</a>
+                                   <h5>@product.Price $</h5>
+                              </div>
+                         </div>
                     </div>
-                </div>
-            }
-        </div>
-    </div>
+               }
+          </div>
+     </div>
 </section>

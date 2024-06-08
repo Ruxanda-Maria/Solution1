@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace WebApplication1.Domain.Entities.User
 {
-    public class BoolResp
-    {
-        public bool Status { get; set; }
-        public string StatusMsg { get; set; }
-    }
+     public class BoolResp
+     {
+          public bool Status { get; set; }
+          public string StatusMsg { get; set; }
+     }
 }

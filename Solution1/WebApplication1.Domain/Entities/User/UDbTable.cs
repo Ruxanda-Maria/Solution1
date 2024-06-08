@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
+
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 using WebApplication1.Domain.Enums;
 
 namespace WebApplication1.Domain.Entities.User
@@ -21,16 +18,16 @@ namespace WebApplication1.Domain.Entities.User
         [Display(Name = "Password")]
         public string Password { get; set; }
 
-        [Display(Name = "Last Login")]
-        public DateTime LastLogin { get; set; }
+          [Display(Name = "Last Login")]
+          public DateTime LastLogin { get; set; }
 
-        [Display(Name = "Last Ip")]
-        public string LastIp { get; set; }
+          [Display(Name = "Last Ip")]
+          public string LastIp { get; set; }
 
-        [Display(Name = "Level")]
-        public URole Level { get; set; }
+          [Display(Name = "Level")]
+          public URole Level { get; set; }
 
-        [Display(Name = "Image")]
-        public string Image { get; set; }
-    }
+          [Display(Name = "Image")]
+          public string Image { get; set; }
+     }
 }

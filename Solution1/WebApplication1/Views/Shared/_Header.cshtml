@@ -1,100 +1,96 @@
 ﻿@{
-    var user = ViewBag.user;
-    var userStatus = ViewBag.userStatus;
-    ViewBag.Title = "_Header";
+     var user = ViewBag.user;
+     var userStatus = ViewBag.userStatus;
+     ViewBag.Title = "_Header";
 }
 
 <header class="header">
-    @if (userStatus == "guest")
-    {
-        <div class="header__top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-7">
-                        <div class="header__top__left">
-                            <p>Livrare gratuită. Retur la 30 de zile sau în baza garanției.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-5">
-                        <div class="header__top__right">
-                            <div class="header__top__links">
-                                <a href="/Login/Index">Autentificare</a>
-                                <a href="/Register/Index">Inregistrare</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    }
-    @if (userStatus == "login")
-    {
-        if (user != null && (int)user.Level == 2)
-        {
-            <div class="header__top">
-                <div class="container">
+     @if (userStatus == "guest")
+     {
+          <div class="header__top">
+               <div class="container">
                     <div class="row">
-                        <div class="col-lg-6 col-md-7">
-                            <div class="header__top__left">
-                                <p>Livrare gratuită. Retur la 30 de zile sau în baza garanției.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-5">
-                            <div class="header__top__right">
-                                <div class="header__top__links">
-                                    <a href="/Admin/AddUser">Utilizator Nou</a>
-                                    <a href="/Admin/AddProduct">Produs Nou</a>
-                                </div>
-                            </div>
-                        </div>
+                         <div class="col-lg-6 col-md-7">
+                              <div class="header__top__left">
+                                   <p>Livrare gratuită. Retur la 30 de zile sau în baza garanției.</p>
+                              </div>
+                         </div>
+                         <div class="col-lg-6 col-md-5">
+                              <div class="header__top__right">
+                                   <div class="header__top__links">
+                                        <a href="/Login/Index">Autentificare</a>
+                                        <a href="/Register/Index">Inregistrare</a>
+                                   </div>
+                              </div>
+                         </div>
                     </div>
-                </div>
-            </div>
-        }
-    }
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-md-3">
-                <div class="header__logo">
-                    <a href="/Home/Index"><img src="~/Images/logo.png" alt=""></a>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <nav class="header__menu">
-                    <ul>
-                        <li><a href="/Home/Index">Acasă</a></li>
-                        <li>
-                            <a href="#">Magazin</a>
-                            <ul class="dropdown">
-                                <li><a href="@Url.Action("Shop", "Home", new {type = "All",category = "All", minPrice = 0, maxPrice = 0, size = "All"})">Toate Produsele</a></li>
-                                <li><a href="@Url.Action("Shop", "Home", new {type = "Rochii",category = "All", minPrice = 0, maxPrice = 0, size = "All"})">Rochii</a></li>
-                                <li><a href="@Url.Action("Shop", "Home", new {type = "Incaltaminte",category = "All", minPrice = 0, maxPrice = 0, size = "All"})">Încălțăminte</a></li>
-                                <li><a href="@Url.Action("Shop", "Home", new {type = "Accesorii",category = "All", minPrice = 0, maxPrice = 0, size = "All"})">Accesorii</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">Pagini</a>
-                            <ul class="dropdown">
-                                <li><a href="/Home/About">Despre noi</a></li>
-                                <li><a href="/Home/BlogDetails">Blog Details</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="/Home/Blog">Blog</a></li>
-                        <li><a href="/Home/Contacts">Contacte</a></li>
-                    </ul>
-                </nav>
-            </div>
-            @if (userStatus == "login")
-            {
-                <div class="col-lg-3 col-md-3">
-                    <nav class="header__menu mobile-menu">
-                        <ul>
-                            <li><a href="/Home/Cart"><img src="~/Images/icon/cart.png"></a></li>
-                            <li><a href="/Login/Index">Log Out</a></li>
-                        </ul>
+               </div>
+          </div>
+     }
+     @if (userStatus == "login")
+     {
+          if (user != null && (int)user.Level == 2)
+          {
+               <div class="header__top">
+                    <div class="container">
+                         <div class="row">
+                              <div class="col-lg-6 col-md-7">
+                                   <div class="header__top__left">
+                                        <p>Livrare gratuită. Retur la 30 de zile sau în baza garanției.</p>
+                                   </div>
+                              </div>
+                              <div class="col-lg-6 col-md-5">
+                                   <div class="header__top__right">
+                                        <div class="header__top__links">
+                                             <a href="/Admin/AddUser">Utilizator Nou</a>
+                                             <a href="/Admin/AddProduct">Produs Nou</a>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          }
+     }
+     <div class="container">
+          <div class="row">
+               <div class="col-lg-3 col-md-3">
+                    <div class="header__logo">
+                         <a href="/Home/Index"><img src="~/Images/logo.png" alt=""></a>
+                    </div>
+               </div>
+               <div class="col-lg-6 col-md-6">
+                    <nav class="header__menu">
+                         <ul>
+                              <li><a href="/Home/Index">Acasă</a></li>
+                              <li>
+                                   <a href="#">Magazin</a>
+                                   <ul class="dropdown">
+                                        <li><a href="@Url.Action("Shop", "Home", new {type = "All",category = "All", minPrice = 0, maxPrice = 0, size = "All"})">Toate Produsele</a></li>
+                                        <li><a href="@Url.Action("Shop", "Home", new {type = "Rochii",category = "All", minPrice = 0, maxPrice = 0, size = "All"})">Rochii</a></li>
+                                        <li><a href="@Url.Action("Shop", "Home", new {type = "Incaltaminte",category = "All", minPrice = 0, maxPrice = 0, size = "All"})">Încălțăminte</a></li>
+                                        <li><a href="@Url.Action("Shop", "Home", new {type = "Accesorii",category = "All", minPrice = 0, maxPrice = 0, size = "All"})">Accesorii</a></li>
+                                   </ul>
+                              </li>
+                              <li>
+                                  <a href="/Home/About">Despre noi</a>
+                              </li>
+                              <li><a href="/Home/Blog">Blog</a></li>
+                              <li><a href="/Home/Contacts">Contacte</a></li>
+                         </ul>
                     </nav>
-                </div>
-            }
-        </div>
-    </div>
+               </div>
+               @if (userStatus == "login")
+               {
+                    <div class="col-lg-3 col-md-3">
+                         <nav class="header__menu mobile-menu">
+                              <ul>
+                                   <li><a href="/Home/Cart"><img src="~/Images/icon/cart.png"></a></li>
+                                   <li><a href="/Login/Index">Log Out</a></li>
+                              </ul>
+                         </nav>
+                    </div>
+               }
+          </div>
+     </div>
 </header>
