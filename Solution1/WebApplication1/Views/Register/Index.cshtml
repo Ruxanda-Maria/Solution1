@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-sm-6 brand mt-5 mb-5">
                 <div class="heading">
-                    <h2>Dunivivi</h2>
+                    <h2>Made With Love</h2>
                     <p>Your Right Choice</p>
                 </div>
 
@@ -51,6 +51,36 @@
                                id = "password"
                            })
                             </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Email, new { @class = "control-label" })
+                                @Html.TextBoxFor(m => m.Email, new
+                                    {
+                                        @class = "form-control",
+                                        type = "email",
+                                        title = "Please enter your email",
+                                        placeholder = "",
+                                        value = "",
+                                        name = "email",
+                                        id = "email"
+                                    })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Phone, new { @class = "control-label" })
+                                @Html.TextBoxFor(m => m.Phone, new
+                                    {
+                                        @class = "form-control",
+                                        type = "tel",
+                                        title = "Please enter your phone number",
+                                        placeholder = "",
+                                        value = "",
+                                        name = "phone",
+                                        id = "phone"
+                                    })
+                            </div>
+
+
                             <div class="CTA">
                                 <input type="submit" value="Signup Now" id="submit">
                             </div>
